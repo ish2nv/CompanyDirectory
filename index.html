@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+		  <meta charset="UTF-8">
+       <meta name="author" content="Shah Ishtiyaq Ali">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Company Directory</title>
+
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="libs/toast/toastr.css">
+
+<link rel="stylesheet" type="text/css" href="libs/css/style.css">
+</head>
+<body>
+	    <header>
+ <nav id = "sidenav" class="navbar navbar-expand-sm fixed-top navbar-light">
+    <div class="container">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar1">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">IA</a>
+        <div class="collapse navbar-collapse" id="navbar1">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active" id = "searchnavID">
+                    <a class="nav-link" href="index.html" onclick="openCreateSearchForm()">Search</a>
+                </li>
+                   <li class="nav-item dropdown" id = "createNavID">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Insert
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item link1" id = "link1ID" onclick="openCreatePersonnelForm()">Personnel</a>
+          <a class="dropdown-item link2" id = "link2ID" onclick="openCreateDepartmentForm()">Department</a>
+          <a class="dropdown-item link3" id = "link3ID" onclick="openCreateLocationForm()">Location</a>
+        </div>
+      </li>
+                </ul> </div> </div></nav>
+</header>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id = "modalBody">
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" onclick="openUpdateEntry()">Edit</button>
+        <button type="button" class="btn btn-danger" onclick="deleteEntry()">Delete</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<form id = "FormsubmitUpdateEntry1"  method="post" onsubmit = "submitUpdateEntry()">
+<div class="container-fluid" id = "mycontainer8">
+    <ul class = "updateList" id = "updateListID">
+    <li><h2 class="listHeader">Update personnel</h2></li>
+    <li><label for="fnameinput">First name:</label>
+    <input class="form-control" id = "fnameinput" type="text" placeholder="First name" required="required" ></li>
+    <li><label for="lnameinput">Last name:</label>
+    <input class="form-control" id = "lnameinput" type="text" placeholder="Last name" required="required"></li>
+    <li><label for="jobtitleinput">Job title:</label>    
+    <input class="form-control" id = "jobtitleinput" type="text" placeholder="Job title" required="required"></li>
+    <li><label for="emailinput">Email address:</label>        
+    <input class="form-control" id = "emailinput" type="email" placeholder="Email" required="required"></li>
+    <li><label for="departmentDropDown">Department:</label>        
+    <select class="form-control" id = "departmentDropDown" required></select></li>
+  <li><input class="btn btn-primary" id = "submitbtn" type="submit" value="Submit change"></li>
+</ul>
+</div>
+</form>
+
+<form id = "FormsubmitUpdateEntry2"  method="post" onsubmit = "submitUpdateEntry2()">
+  <div class="container-fluid" id = "mycontainer8">
+    <ul class = "updateList" id = "updateListID3">
+          <li><h2 class="listHeader">Update department</h2></li>
+      <li><label for="departmentinput">Department:</label>
+    <input class="form-control" id = "departmentinput" type="text" placeholder="Department" required="required" ></li>
+          <li><label for="locationdropdown">Location:</label>
+ <select class="form-control" id = "locationdropdown" required> </select></li>
+  <li><input class="btn btn-primary" id = "submitbtn2" type="submit" value="Submit change"></li>
+    </ul>
+  </div>
+</form>
+
+<form id = "FormsubmitUpdateEntry3"  method="post" onsubmit = "submitUpdateEntry3()">
+    <div class="container-fluid" id = "mycontainer8">
+    <ul class = "updateList" id = "updateListID4">
+                <li><h2 class="listHeader">Update location</h2></li>
+                          <li><label for="locationinput">Location:</label>
+    <input class="form-control" id = "locationinput" type="text" placeholder="Location" required="required" ></li>
+      <li><input class="btn btn-primary" id = "submitbtn3" type="submit" value="Submit change"></li>
+  </ul>
+</div>
+</form>
+
+
+
+
+
+<div class="container-fluid" id = "mycontainer1">
+<h1 class="mainTitle">Company Directory</h1>
+<ul class = "searchList">
+	  <input id = "mysearchBar" type="text" placeholder="Search ..">
+      <button id = "submitsearchbtn" type="submit" onclick="searchEntries()"><i class="fa fa-search"></i></button>
+
+</ul>
+<ul class = "filterOptions">
+  <li><input id = "personnelRadio" type="radio" name="item_type" value="name" checked>
+  <label for="personnelRadio">Name</label></li>
+  <li><input id = "departmentRadio" type="radio" name="item_type" value="department">
+  <label for="departmentRadio">Department</label></li>
+  <li><input id = "locationRadio" type="radio" name="item_type" value="location">
+  <label for="locationRadio">Location</label></li>
+</ul>
+
+</div>
+
+
+<div class="container-fluid" id = "mycontainer2">
+
+<ul class = "entryList" id = "entryListID">
+	</ul>
+
+</div>
+
+<form method="post" onsubmit = "submitCreatePersonnelEntry()" id = "formCreate1">
+
+<div class="container-fluid" id = "mycontainer3">
+<ul class = "createPersonnel" id = "createPersonnelID">
+<li><h2>Personnel</h2></li>
+<li><img src = "imgs/staff.jpg"></li>
+  <li><label for="fnameinput_create">First name:</label>
+<input class="form-control" id = "fnameinput_create" type="text" placeholder="First name" required="required" ></li>
+  <li><label for="lnameinput_create">Last name:</label>
+	 <input class="form-control" id = "lnameinput_create" type="text" placeholder="Last name" required="required"></li>
+   <li><label for="jobtitleinput_create">Job title:</label>  
+	<input class="form-control" id = "jobtitleinput_create" type="text" placeholder="Job title" required="required"></li>
+     <li><label for="emailinput_create">Email address:</label>  
+<input class="form-control" id = "emailinput_create" type="email" placeholder="Email" required="required"></li>
+
+	</ul>
+	</div>
+<div class="container-fluid" id = "mycontainer4">
+<ul class = "createDepartment" id = "createDepartmentID">
+<li><h2>Department</h2></li>
+<li><img src = "imgs/department.jpg"></li>
+     <li><label for="departmentDropDown_create">Department:</label>  
+	  <select class="form-control" id = "departmentDropDown_create" required="required"></select></li>
+             <li><input class="btn btn-primary" id = "submit_create" type="submit" value="Submit"></li>
+	</ul>
+</div>
+</form>
+
+
+
+<form method="post" onsubmit = "submitCreateDepartmentEntry()" id = "formCreate2">
+<div class="container-fluid" id = "mycontainer5">
+
+<ul class = "newdepartment" id = "newdepartmentID">
+<li><h2>Department</h2></li>
+<li><img src = "imgs/department.jpg"></li>
+<li><label for="newdepartment_input">Department:</label>  
+<input class="form-control" id = "newdepartment_input" type="text" placeholder="New department" required="required" ></li>
+</ul>
+</div>
+
+<div class="container-fluid" id = "mycontainer6">
+
+<ul class = "selectLocation" id = "selectLocationID">
+<li><h2>Location</h2></li>
+<li><img src = "imgs/Location.jpg"></li>
+<li><label for="selectLocation_select">Location:</label>  
+	<select class="form-control" id = "selectLocation_select" required="required"></select></li>
+             <li><input class="btn btn-primary" id = "submit_create2" type="submit" value="Submit"></li>
+	</ul>
+</div>
+</form>
+<form method="post" onsubmit = "submitCreateLocationEntry()" id = "formCreate3">
+
+<div class="container-fluid" id = "mycontainer7">
+<ul class = "newLocation" id = "newLocationID">
+<li><h2>Location</h2></li>
+<li><img class = "imgnewlocation" src = "imgs/location.jpg"></li>
+<li><label for="newLocation_input">Location:</label>  
+<input class="form-control" id = "newLocation_input" type="text" placeholder="New location" required="required" ></li>
+ <li><input class="btn btn-primary" id = "submit_create3" type="submit" value="Submit"></li>
+</ul>
+	</div>
+</form>
+
+<footer>
+    <p>© Shah Ali 2020. All Rights Reserved.</p>
+
+ </footer>
+
+    <script type="application/javascript" src="libs/js/jquery-2.2.3.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+      <script type="application/javascript" src="libs/toast/toastr.js"></script>
+<script src="https://kit.fontawesome.com/4273a378cb.js" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="libs/js/Script.js"></script>
+</body>
+</html>

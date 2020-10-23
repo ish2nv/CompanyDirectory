@@ -1,0 +1,732 @@
+body {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: gainsboro;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: orange; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: black; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: gray; 
+}
+@font-face {
+
+font-family: olympiccarrierhalfimport;
+src:url("../font/olympiccarrierhalf.ttf"),
+    url("../font/olympiccarrierhalf.eot"),
+    url('../font/olympiccarrierhalf.eot?#iefix') format('embedded-opentype'),
+    url('../font/olympiccarrierhalf.woff2'),
+    url('../font/olympiccarrierhalf.woff');
+
+}
+@font-face {
+
+font-family: middayfont;
+  src: url("../font/atthemiddayfont.otf") format("opentype"),
+    url("../font/atthemiddayfont.eot"),
+    url('../font/atthemiddayfont.eot?#iefix') format('embedded-opentype');
+
+}
+
+
+.mainTitle{
+  font-family: middayfont;
+  width: 100%;
+  text-align: center;
+    padding: 0;
+
+}
+.subHeader1 {
+width: 100%;
+  text-align: center;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h2 {
+  width: 100%;
+  text-align: center;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar-toggler { 
+background-color: gray;
+
+ }
+
+ .navbar-brand {
+  font-family: olympiccarrierhalfimport;
+font-size: 55px;
+}
+nav li{
+    margin-right: 10px;
+    margin-left: 10px;
+    transition: 0.5s ease-out;
+    -webkit-transition: 0.5s ease-in;
+  -webkit-transition: 0.5s ease-out;
+}
+
+nav li:hover {
+
+  background-color: black;
+}
+nav {
+  background-color:  gray;
+}
+#sidenav a {
+  color: white;
+
+}
+#sidenav li a {
+  color: white;
+   font-size: 25px;
+
+}
+.active {
+text-decoration: underline;
+color: white;
+
+}
+header .container {
+	height: 100%; 
+    width:100%;
+    text-align: center;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ul.mainpageNav  {
+margin-top: 125px;
+list-style-type:none;
+
+}
+
+ul.mainpageNav li {
+  display:inline;
+  
+}
+
+
+ul.mainpageNav li a {
+   font-size: 20px;
+text-decoration: none;
+padding: 15px;
+border:1px solid black;
+    transition: 0.5s ease-out;
+    -webkit-transition: 0.5s ease-in;
+  -webkit-transition: 0.5s ease-out;
+	  }
+
+ul.mainpageNav li a:hover {
+	color: white;
+background-color: black;
+
+}
+.dropdown-menu {
+  background-color:  gray;
+}
+.dropdown-menu .dropdown-item {
+  cursor: pointer;
+  font-size: 20px !important;
+}
+.nav-link {
+  cursor: pointer;
+
+}
+
+
+.dropdown-menu .dropdown-item:hover {
+  background-color: black;
+}
+
+ul.filterOptions {
+  width: 100%;
+  padding: 0;
+  text-align: center;
+  margin-top: 10px;
+}
+ul.filterOptions li {
+  display:inline;
+  margin:4px;
+}
+
+.filterOptions input {
+ -webkit-appearance: none;
+-moz-appearance: none;
+-ms-appearance: none;
+-o-appearance: none;
+appearance: none;
+}
+.filterOptions input:checked+label {
+background-color: black;
+color: white;
+}
+.filterOptions label {
+  display:inline;
+   vertical-align:top;
+   margin-left: 10px;
+     cursor: pointer;
+     padding: 10px;
+        transition: 0.5s ease-out;
+    -webkit-transition: 0.5s ease-in;
+  -webkit-transition: 0.5s ease-out;
+}
+
+.filterOptions label:hover {
+  text-decoration: underline;
+}
+
+.entryResultNumber{
+  margin-top: 15px;
+  font-style: italic;
+}
+
+
+#mycontainer1.container-fluid {
+border-right: 1px solid black;
+float: left;
+width: 50%;
+height: 100%;
+  display: flex;
+    align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+#mycontainer2.container-fluid {
+float: right;
+  width: 50%;
+height: 100%;
+overflow-y: auto;
+  overflow-x: hidden;
+
+}
+#mycontainer3.container-fluid {
+float: left;
+width: 50%;
+height: 100%;
+border-right: 1px solid black;
+overflow-y: auto;
+  overflow-x: hidden;
+
+}
+#mycontainer4.container-fluid {
+float: right;
+width: 50%;
+height: 100%;
+overflow-y: auto;
+  overflow-x: hidden;
+}
+#mycontainer5.container-fluid {
+float: left;
+width: 50%;
+height: 100%;
+border-right: 1px solid black;
+overflow-y: auto;
+  overflow-x: hidden;
+}
+#mycontainer6.container-fluid {
+float: right;
+width: 50%;
+height: 100%;
+overflow-y: auto;
+  overflow-x: hidden;
+}
+#mycontainer7.container-fluid {
+  width: 100%;
+height: 100%;
+overflow-y: auto;
+  overflow-x: hidden;
+}
+#mycontainer8.container-fluid {
+  width: 100%;
+height: 100%;
+overflow-y: auto;
+  overflow-x: hidden;
+}
+ul.entryList {
+margin-top: 145px;
+list-style-type:none;
+text-align: center;
+width: 100%;
+padding: 0;
+margin-bottom: 22px;
+}
+
+.searchList {
+   width:100%;
+       padding:0;
+         display: flex;
+    align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  flex-direction: row;
+  }
+ 
+ input#mysearchBar:focus,
+button#submitsearchbtn:focus {
+    outline: none;
+}
+
+#mysearchBar {
+  border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    padding: 16px;
+  width: 76%;
+   border: 1px solid grey;
+  border-left: none; /* Prevent double borders */
+}
+#submitsearchbtn {
+  border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+        padding: 16px;
+background: #2196F3;
+  color: white;
+   border: 1px solid grey;
+  border-left: none; /* Prevent double borders */
+}
+#submitsearchbtn:hover {
+  background: #0b7dda;
+}
+
+#entryListOption {
+    background:none;
+    border:none;
+    margin-top: 20px;
+    cursor: pointer;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    color: #0000EE;
+        transition: 0.5s ease-out;
+    -webkit-transition: 0.5s ease-in;
+  -webkit-transition: 0.5s ease-out;
+}
+ul.entryList li {
+  display: inline;
+  margin: 10px;
+}
+
+#entryListOption:hover {
+  background-color: black;
+  color: white;
+}
+
+
+#FormsubmitUpdateEntry1 input, #FormsubmitUpdateEntry2 input,#FormsubmitUpdateEntry3 input,#FormsubmitUpdateEntry1 label,#FormsubmitUpdateEntry2 label,#FormsubmitUpdateEntry3 label{
+  width: 50%;
+  padding: 10px;
+}
+
+#FormsubmitUpdateEntry1 input[type = "submit"], #FormsubmitUpdateEntry2 input[type = "submit"],#FormsubmitUpdateEntry3 input[type = "submit"]{
+  width: 38%;
+  margin-top: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+#FormsubmitUpdateEntry1 select, #FormsubmitUpdateEntry2 select {
+  width: 50%;
+}
+
+#FormsubmitUpdateEntry1 {
+	display: none;
+  width: 100%;
+  height: 100%;
+}
+
+.updateList {
+padding: 0;
+margin-top: 135px;
+
+}
+.updateList li{
+  list-style-type: none;
+    display: flex;
+    align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+
+#FormsubmitUpdateEntry2 {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+#FormsubmitUpdateEntry3 {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+#submitbtn {
+	margin-top: 20px;
+}
+
+.createPersonnel li{
+	list-style-type: none;
+	  display: flex;
+    align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 10px;
+
+}
+.createPersonnel {
+padding: 0;
+margin-top: 135px;
+
+}
+.createDepartment {
+
+padding: 0;
+margin-top: 135px;
+
+}
+.createDepartment li{
+	list-style-type: none;
+	  display: flex;
+    align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 10px;
+
+}
+
+label{
+  font-weight: bold;
+}
+
+.newdepartment li{
+	list-style-type: none;
+	  display: flex;
+    align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 10px;
+}
+.newdepartment {
+padding: 0;
+margin-top: 135px;
+
+
+}
+.selectLocation {
+margin-top: 135px;
+
+padding: 0;
+
+}
+.selectLocation li{
+	list-style-type: none;
+	  display: flex;
+    align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 10px;
+
+}
+
+
+.newLocation {
+padding: 0;
+margin-top: 135px;
+
+}
+.newLocation li{
+	list-style-type: none;
+	  display: flex;
+    align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+
+
+ul li img {
+	width: 55%;
+    border-radius: 13px;
+}
+
+ul li img.imgnewlocation {
+  width: 38%;
+    border-radius: 13px;
+
+}
+
+
+#formCreate1 {
+	width: 100%;
+	height: 100%;
+   display: none;
+
+}
+#formCreate2 {
+	width: 100%;
+	height: 100%;
+  display: none;
+}
+#formCreate3 {
+	width: 100%;
+	height: 100%;
+  display: none;
+}
+
+
+#formCreate3 input,#formCreate3 label {
+   width: 35%;
+  padding: 10px;
+}
+#formCreate3 input[type = "submit"]  {
+  width: 35%;
+  margin-top: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+
+}
+#formCreate1 input, #formCreate2 input,#formCreate1 label,#formCreate2 label{
+  width: 50%;
+  padding: 10px;
+}
+
+#formCreate1 input[type = "submit"],#formCreate2 input[type = "submit"]{
+  width: 43%;
+  margin-top: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+#formCreate1 select,#formCreate2 select {
+  width: 50%;
+
+}
+footer {
+    position: fixed;
+  bottom: 0;
+  width: 100%;
+ }
+footer p{
+color: white;
+ font-size: 11px;
+ margin-top: 5px;
+ float: right;
+ background-color: black;
+ padding: 0;
+ margin:0;
+}
+
+@media only screen and (max-width: 730px) {
+
+#mycontainer1.container-fluid {
+border-right: none;
+border-bottom: 1px solid black;
+float: left;
+width: 100%;
+height: 100%;
+  display: block;
+}
+.mainTitle{
+  font-family: middayfont;
+  width: 100%;
+  text-align: center;
+    padding: 0;
+margin-top: 155px;
+}
+#mycontainer2.container-fluid {
+float: right;
+width: 100%;
+height: 100%;
+overflow-y: auto;
+  overflow-x: hidden;
+display: none;
+}
+
+
+ul.entryList {
+margin-top: 25px;
+list-style-type:none;
+text-align: center;
+padding: 0;
+margin-bottom: 22px;
+}
+ul.filterOptions li {
+  display:block;
+  margin:0px;
+  margin-top: 25px;
+}
+
+
+#formCreate3 input,#formCreate3 label {
+   width: 100%;
+  padding: 10px;
+}
+#formCreate3 input[type = "submit"]  {
+  width: 60%;
+  margin-top: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+
+}
+#formCreate1 input, #formCreate2 input,#formCreate1 label,#formCreate2 label{
+   width: 100%;
+  padding: 10px;
+}
+
+#formCreate1 input[type = "submit"],#formCreate2 input[type = "submit"]{
+  width: 60%;
+  margin-top: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+#formCreate1 select,#formCreate2 select {
+   width: 100%;
+}
+#FormsubmitUpdateEntry1 input, #FormsubmitUpdateEntry2 input,#FormsubmitUpdateEntry3 input,#FormsubmitUpdateEntry1 label,#FormsubmitUpdateEntry2 label,#FormsubmitUpdateEntry3 label{
+   width: 100%;
+  padding: 10px;
+}
+
+#FormsubmitUpdateEntry1 input[type = "submit"], #FormsubmitUpdateEntry2 input[type = "submit"],#FormsubmitUpdateEntry3 input[type = "submit"]{
+  width: 60%;
+  margin-top: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+#FormsubmitUpdateEntry1 select, #FormsubmitUpdateEntry2 select {
+   width: 100%;
+
+}
+ul li img {
+   width: 100%;
+    border-radius: 13px;
+}
+
+ul li img.imgnewlocation {
+   width: 100%;
+    border-radius: 13px;
+
+}
+
+h2 {
+font-size: 25px;
+}
+}
+
+@media only screen and (max-height: 480px) {
+
+#mycontainer1.container-fluid {
+border-right: none;
+border-bottom: 1px solid black;
+float: left;
+width: 100%;
+height: 100%;
+  display: block;
+}
+.mainTitle{
+  font-family: middayfont;
+  width: 100%;
+  text-align: center;
+    padding: 0;
+margin-top: 155px;
+}
+#mycontainer2.container-fluid {
+float: right;
+width: 100%;
+height: 100%;
+overflow-y: auto;
+  overflow-x: hidden;
+display: none;
+}
+
+
+ul.entryList {
+margin-top: 25px;
+list-style-type:none;
+text-align: center;
+padding: 0;
+margin-bottom: 22px;
+}
+ul.filterOptions li {
+  display:block;
+  margin:0px;
+  margin-top: 25px;
+}
+
+
+#formCreate3 input,#formCreate3 label {
+   width: 100%;
+  padding: 10px;
+}
+#formCreate3 input[type = "submit"]  {
+  width: 60%;
+  margin-top: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+
+}
+#formCreate1 input, #formCreate2 input,#formCreate1 label,#formCreate2 label{
+   width: 100%;
+  padding: 10px;
+}
+
+#formCreate1 input[type = "submit"],#formCreate2 input[type = "submit"]{
+  width: 60%;
+  margin-top: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+#formCreate1 select,#formCreate2 select {
+   width: 100%;
+
+}
+#FormsubmitUpdateEntry1 input, #FormsubmitUpdateEntry2 input,#FormsubmitUpdateEntry3 input,,#FormsubmitUpdateEntry1 label,#FormsubmitUpdateEntry2 label,#FormsubmitUpdateEntry3 label{
+   width: 100%;
+  padding: 10px;
+}
+
+#FormsubmitUpdateEntry1 input[type = "submit"], #FormsubmitUpdateEntry2 input[type = "submit"],#FormsubmitUpdateEntry3 input[type = "submit"]{
+  width: 60%;
+  margin-top: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+#FormsubmitUpdateEntry1 select, #FormsubmitUpdateEntry2 select {
+   width: 100%;
+
+}
+ul li img {
+   width: 100%;
+    border-radius: 13px;
+}
+
+ul li img.imgnewlocation {
+   width: 100%;
+    border-radius: 13px;
+
+}
+
+h2 {
+font-size: 25px;
+}
+
+}
