@@ -605,6 +605,17 @@ function submitCreatePersonnelEntry() {
 	var form1 = document.getElementById("formCreate1");
 	var container1 = document.getElementById("mycontainer1");
 	var container2 = document.getElementById("mycontainer2");
+	  var searchelement = document.getElementById("searchnavID");
+   var createelement1 = document.getElementById("createNavID");
+  var link1element = document.getElementById("link1ID");
+  var link2element = document.getElementById("link2ID");
+  var link3element = document.getElementById("link3ID");
+
+  createelement1.classList.remove("active");
+  searchelement.classList.add("active");
+  link2element.classList.remove("active");
+  link3element.classList.remove("active");
+  link1element.classList.remove("active");
 
 	form1.style.display = "none";
 	container1.style.display = "flex";
@@ -648,7 +659,17 @@ function submitCreateDepartmentEntry() {
 		var form1 = document.getElementById("formCreate2");
 	var container1 = document.getElementById("mycontainer1");
 	var container2 = document.getElementById("mycontainer2");
+	  var searchelement = document.getElementById("searchnavID");
+   var createelement1 = document.getElementById("createNavID");
+  var link1element = document.getElementById("link1ID");
+  var link2element = document.getElementById("link2ID");
+  var link3element = document.getElementById("link3ID");
 
+  createelement1.classList.remove("active");
+  searchelement.classList.add("active");
+  link2element.classList.remove("active");
+  link3element.classList.remove("active");
+  link1element.classList.remove("active");
 	form1.style.display = "none";
 	container1.style.display = "flex";
 	container2.style.display = "flex";
@@ -683,7 +704,17 @@ function submitCreateLocationEntry() {
 	var form1 = document.getElementById("formCreate3");
 	var container1 = document.getElementById("mycontainer1");
 	var container2 = document.getElementById("mycontainer2");
+	  var searchelement = document.getElementById("searchnavID");
+   var createelement1 = document.getElementById("createNavID");
+  var link1element = document.getElementById("link1ID");
+  var link2element = document.getElementById("link2ID");
+  var link3element = document.getElementById("link3ID");
 
+  createelement1.classList.remove("active");
+  searchelement.classList.add("active");
+  link2element.classList.remove("active");
+  link3element.classList.remove("active");
+  link1element.classList.remove("active");
 	form1.style.display = "none";
 	container1.style.display = "flex";
 	container2.style.display = "flex";

@@ -37,8 +37,9 @@ src:url("../font/olympiccarrierhalf.ttf"),
 
 font-family: middayfont;
   src: url("../font/atthemiddayfont.otf") format("opentype"),
-    url("../font/atthemiddayfont.eot"),
-    url('../font/atthemiddayfont.eot?#iefix') format('embedded-opentype');
+  url("../font/atthemiddayfont.woff"),
+   url("../font/atthemiddayfont.woff2");
+
 
 }
 
@@ -463,11 +464,13 @@ margin-top: 135px;
 
 ul li img {
 	width: 55%;
+	height: 100%;
     border-radius: 13px;
 }
 
 ul li img.imgnewlocation {
   width: 38%;
+  	height: 100%;
     border-radius: 13px;
 
 }
@@ -496,7 +499,7 @@ ul li img.imgnewlocation {
   padding: 10px;
 }
 #formCreate3 input[type = "submit"]  {
-  width: 35%;
+  width: 30%;
   margin-top: 10px;
   padding: 10px;
   margin-bottom: 10px;
@@ -543,6 +546,12 @@ width: 100%;
 height: 100%;
   display: block;
 }
+
+#mycontainer1 p {
+	text-align: center;
+}
+
+
 .mainTitle{
   font-family: middayfont;
   width: 100%;
@@ -575,7 +584,7 @@ ul.filterOptions li {
 
 
 #formCreate3 input,#formCreate3 label {
-   width: 100%;
+   width: 80%;
   padding: 10px;
 }
 #formCreate3 input[type = "submit"]  {
@@ -621,7 +630,7 @@ ul li img {
 }
 
 ul li img.imgnewlocation {
-   width: 100%;
+   width: 80%;
     border-radius: 13px;
 
 }
@@ -640,6 +649,9 @@ float: left;
 width: 100%;
 height: 100%;
   display: block;
+}
+#mycontainer1 p {
+	text-align: center;
 }
 .mainTitle{
   font-family: middayfont;
@@ -673,7 +685,7 @@ ul.filterOptions li {
 
 
 #formCreate3 input,#formCreate3 label {
-   width: 100%;
+   width: 80%;
   padding: 10px;
 }
 #formCreate3 input[type = "submit"]  {
@@ -720,7 +732,7 @@ ul li img {
 }
 
 ul li img.imgnewlocation {
-   width: 100%;
+   width: 80%;
     border-radius: 13px;
 
 }
