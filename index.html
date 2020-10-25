@@ -114,16 +114,16 @@
 <div class="container-fluid" id = "mycontainer1">
 <h1 class="mainTitle">Company Directory</h1>
 <ul class = "searchList">
-	  <input id = "mysearchBar" type="text" placeholder="Search ..">
+	  <input id = "mysearchBar" type="text" placeholder="Search name, location, department..">
       <button id = "submitsearchbtn" type="submit" onclick="searchEntries()"><i class="fa fa-search"></i></button>
 
 </ul>
 <ul class = "filterOptions">
-  <li><input id = "personnelRadio" type="radio" name="item_type" value="name" checked>
-  <label for="personnelRadio">Name</label></li>
-  <li><input id = "departmentRadio" type="radio" name="item_type" value="department">
+  <li><input id = "personnelRadio" type="radio" name="item_type" value="name" checked  onclick="onClickpersonnelRadio()">
+  <label for="personnelRadio">Personnel</label></li>
+  <li><input id = "departmentRadio" type="radio" name="item_type" value="department" onclick="onClickdepartmentRadio()">
   <label for="departmentRadio">Department</label></li>
-  <li><input id = "locationRadio" type="radio" name="item_type" value="location">
+  <li><input id = "locationRadio" type="radio" name="item_type" value="location" onclick="onClicklocationRadio()">
   <label for="locationRadio">Location</label></li>
 </ul>
 

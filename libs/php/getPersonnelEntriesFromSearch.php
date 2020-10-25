@@ -35,7 +35,7 @@
 	$storeSearch =  $_POST['searchResult'];
 
 
-	$query = "SELECT * FROM personnel where firstName LIKE '%$storeSearch%' OR lastName LIKE '%$storeSearch%' ORDER BY firstName ASC  ";
+	$query = "SELECT DISTINCT(personnel.id), firstName, lastName,jobTitle,email,departmentID,department.name,location.name FROM personnel,department,location where (firstName LIKE '%$storeSearch%' OR lastName LIKE '%$storeSearch%' OR department.name LIKE '%$storeSearch%' OR location.name LIKE '%$storeSearch%') AND(departmentID = department.id) AND(locationID = location.id) group by (personnel.firstName ) ASC";
 
 	$result = $conn->query($query);
 	

@@ -47,8 +47,6 @@ function searchEntries() {
 var node = document.getElementById("entryListID");
 var subheader = document.createElement("h2");
 var m_li = document.createElement("li");
-var container_2 = document.getElementById("mycontainer2");
-container_2.style.display = "flex";
 var container_1tmp = document.getElementById("mycontainer1");
 
 
@@ -57,7 +55,6 @@ var container_1tmp = document.getElementById("mycontainer1");
           }
 
 
-    removeElementsByClass("entryResultNumber");
 if (document.getElementById('personnelRadio').checked) {
 radiobtnoptionglobal = document.getElementById('personnelRadio').value; 
     $.ajax({
@@ -89,8 +86,25 @@ radiobtnoptionglobal = document.getElementById('personnelRadio').value;
                     var container_1 = document.getElementById("mycontainer1");
 					var para = document.createElement("p");
 					para.setAttribute("class","entryResultNumber");
+
+					  if ($(".entryResultNumber")[0]){
+					   $(".entryResultNumber").css("display","block");
+					   $(".entryResultNumber").html(result['data'].length + " entries returned");
+					}
+					else {
 					para.innerHTML = result['data'].length + " entries returned";
 					container_1.appendChild(para);
+					}
+
+
+					if(result['data'].length == 0 ){
+                    let container_2 = document.getElementById("mycontainer2");
+                    container_2.style.display="none";
+					}
+					else {
+						let container_2 = document.getElementById("mycontainer2");
+                        container_2.style.display = "flex";
+					}
 				
 			}
 		}
@@ -131,8 +145,24 @@ radiobtnoptionglobal = document.getElementById('departmentRadio').value;
 				    var container_1 = document.getElementById("mycontainer1");
 					var para = document.createElement("p");
 					para.setAttribute("class","entryResultNumber");
+					  if ($(".entryResultNumber")[0]){
+					   $(".entryResultNumber").css("display","block");
+					   $(".entryResultNumber").html(result['data'].length + " entries returned");
+					}
+					else {
 					para.innerHTML = result['data'].length + " entries returned";
 					container_1.appendChild(para);
+					}
+
+
+					if(result['data'].length == 0 ){
+                    let container_2 = document.getElementById("mycontainer2");
+                    container_2.style.display="none";
+					}
+					else {
+						let container_2 = document.getElementById("mycontainer2");
+                        container_2.style.display = "flex";
+					}
 			}
 		}
 	},
@@ -174,8 +204,25 @@ radiobtnoptionglobal = document.getElementById('locationRadio').value;
 				    var container_1 = document.getElementById("mycontainer1");
 					var para = document.createElement("p");
 					para.setAttribute("class","entryResultNumber");
+					  if ($(".entryResultNumber")[0]){
+					$(".entryResultNumber").css("display","block");
+		  	
+					   $(".entryResultNumber").html(result['data'].length + " entries returned");
+					}
+					else {
 					para.innerHTML = result['data'].length + " entries returned";
 					container_1.appendChild(para);
+					}
+
+
+					if(result['data'].length == 0 ){
+                    let container_2 = document.getElementById("mycontainer2");
+                    container_2.style.display="none";
+					}
+					else {
+						let container_2 = document.getElementById("mycontainer2");
+                        container_2.style.display = "flex";
+					}
 			}
 		}
 	},
@@ -961,4 +1008,23 @@ function openCreateSearchForm(){
 	form5.style.display = "none";
 	form6.style.display = "none";
 
+}
+
+function onClickpersonnelRadio() {
+var searchbar = document.getElementById("mysearchBar");
+searchbar.placeholder = "Search name, location, department..";
+
+}
+
+function onClickdepartmentRadio() {
+var searchbar = document.getElementById("mysearchBar");
+searchbar.placeholder = "Search department";
+
+
+
+}
+
+function onClicklocationRadio() {
+var searchbar = document.getElementById("mysearchBar");
+searchbar.placeholder = "Search location";
 }
