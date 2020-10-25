@@ -388,9 +388,12 @@ function submitUpdateEntry() {
 		var container1 = document.getElementById("mycontainer1");
 	var container2 = document.getElementById("mycontainer2");
 	var form1 = document.getElementById("FormsubmitUpdateEntry1");
-
+  var entrypara = document.getElementsByClassName("entryResultNumber");
+  if ($(".entryResultNumber")[0]){
+  entrypara[0].style.display="none";
+}
 	container1.style.display = "flex";
-	container2.style.display = "flex";
+	container2.style.display = "none";
 	form1.style.display = "none";
 
 	var fnameinput = document.getElementById("fnameinput");
@@ -432,9 +435,12 @@ function submitUpdateEntry2() {
 	var container1 = document.getElementById("mycontainer1");
 	var container2 = document.getElementById("mycontainer2");
 	var form1 = document.getElementById("FormsubmitUpdateEntry2");
-
+  var entrypara = document.getElementsByClassName("entryResultNumber");
+  if ($(".entryResultNumber")[0]){
+  entrypara[0].style.display="none";
+}
 	container1.style.display = "flex";
-	container2.style.display = "flex";
+	container2.style.display = "none";
 	form1.style.display = "none";
 
 	var departmentinput = document.getElementById("departmentinput");
@@ -469,9 +475,12 @@ function submitUpdateEntry3() {
 	var container1 = document.getElementById("mycontainer1");
 	var container2 = document.getElementById("mycontainer2");
 	var form1 = document.getElementById("FormsubmitUpdateEntry3");
-
+  var entrypara = document.getElementsByClassName("entryResultNumber");
+  if ($(".entryResultNumber")[0]){
+  entrypara[0].style.display="none";
+}
 	container1.style.display = "flex";
-	container2.style.display = "flex";
+	container2.style.display = "none";
 	form1.style.display = "none";
 
 
@@ -521,6 +530,12 @@ $('.modal').modal('hide');
 
 				if(result['status']['description'] == "success") {
                    toastr.success(result['status']['description']);
+                   	var container2 = document.getElementById("mycontainer2");
+		container2.style.display = "none";
+		  var entrypara = document.getElementsByClassName("entryResultNumber");
+  if ($(".entryResultNumber")[0]){
+  entrypara[0].style.display="none";
+}
 				}
 				else {
 				toastr.error(result['status']['description']);
@@ -551,6 +566,12 @@ $('.modal').modal('hide');
 			if(result['status']['code'] == 200) {
 	if(result['status']['description'] == "success") {
                    toastr.success(result['status']['description']);
+                   	var container2 = document.getElementById("mycontainer2");
+		container2.style.display = "none";
+		  var entrypara = document.getElementsByClassName("entryResultNumber");
+  if ($(".entryResultNumber")[0]){
+  entrypara[0].style.display="none";
+}
 				}
 				else {
 				toastr.error(result['status']['description']);
@@ -582,6 +603,12 @@ $('.modal').modal('hide');
 			if(result['status']['code'] == 200) {
 	if(result['status']['description'] == "success") {
                    toastr.success(result['status']['description']);
+                   	var container2 = document.getElementById("mycontainer2");
+		container2.style.display = "none";
+		  var entrypara = document.getElementsByClassName("entryResultNumber");
+  if ($(".entryResultNumber")[0]){
+  entrypara[0].style.display="none";
+}
 				}
 				else {
 				toastr.error(result['status']['description']);
@@ -610,7 +637,10 @@ function submitCreatePersonnelEntry() {
   var link1element = document.getElementById("link1ID");
   var link2element = document.getElementById("link2ID");
   var link3element = document.getElementById("link3ID");
-
+  var entrypara = document.getElementsByClassName("entryResultNumber");
+  if ($(".entryResultNumber")[0]){
+  entrypara[0].style.display="none";
+}
   createelement1.classList.remove("active");
   searchelement.classList.add("active");
   link2element.classList.remove("active");
@@ -619,7 +649,7 @@ function submitCreatePersonnelEntry() {
 
 	form1.style.display = "none";
 	container1.style.display = "flex";
-	container2.style.display = "flex";
+	container2.style.display = "none";
 
 
 	var fnameinput = document.getElementById("fnameinput_create");
@@ -664,7 +694,10 @@ function submitCreateDepartmentEntry() {
   var link1element = document.getElementById("link1ID");
   var link2element = document.getElementById("link2ID");
   var link3element = document.getElementById("link3ID");
-
+  var entrypara = document.getElementsByClassName("entryResultNumber");
+  if ($(".entryResultNumber")[0]){
+  entrypara[0].style.display="none";
+}
   createelement1.classList.remove("active");
   searchelement.classList.add("active");
   link2element.classList.remove("active");
@@ -672,7 +705,7 @@ function submitCreateDepartmentEntry() {
   link1element.classList.remove("active");
 	form1.style.display = "none";
 	container1.style.display = "flex";
-	container2.style.display = "flex";
+	container2.style.display = "none";
 	var departmentinput = document.getElementById("newdepartment_input");
 	var locationDropDown = document.getElementById("selectLocation_select");
     $.ajax({
@@ -709,7 +742,10 @@ function submitCreateLocationEntry() {
   var link1element = document.getElementById("link1ID");
   var link2element = document.getElementById("link2ID");
   var link3element = document.getElementById("link3ID");
-
+  var entrypara = document.getElementsByClassName("entryResultNumber");
+  if ($(".entryResultNumber")[0]){
+  entrypara[0].style.display="none";
+}
   createelement1.classList.remove("active");
   searchelement.classList.add("active");
   link2element.classList.remove("active");
@@ -717,7 +753,7 @@ function submitCreateLocationEntry() {
   link1element.classList.remove("active");
 	form1.style.display = "none";
 	container1.style.display = "flex";
-	container2.style.display = "flex";
+	container2.style.display = "none";
 	var locationinput = document.getElementById("newLocation_input");
     $.ajax({
 	url: "libs/php/insertLocationEntries.php",
@@ -897,7 +933,10 @@ function openCreateSearchForm(){
   var link1element = document.getElementById("link1ID");
   var link2element = document.getElementById("link2ID");
   var link3element = document.getElementById("link3ID");
-
+  var entrypara = document.getElementsByClassName("entryResultNumber");
+  if ($(".entryResultNumber")[0]){
+  entrypara[0].style.display="none";
+}
   createelement1.classList.remove("active");
   link1element.classList.remove("active");
   link2element.classList.remove("active");
@@ -905,13 +944,13 @@ function openCreateSearchForm(){
   searchelement.classList.add("active");
 	var container1 = document.getElementById("mycontainer1");
 	var container2 = document.getElementById("mycontainer2");
+		container2.style.display = "none";
 	var form1 = document.getElementById("formCreate1");
 	var form2 = document.getElementById("formCreate2");
 	var form3 = document.getElementById("formCreate3");
 
 
 	container1.style.display = "flex";
-	container2.style.display = "flex";
 	form1.style.display = "none";
 	form2.style.display = "none";
 	form3.style.display = "none";

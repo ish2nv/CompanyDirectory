@@ -42,7 +42,15 @@ font-family: middayfont;
 
 
 }
+@font-face {
 
+font-family: bariolfont;
+  src: url("../font/bariol.ttf"),
+  url("../font/bariol.woff"),
+   url("../font/bariol.woff2");
+
+
+}
 
 .mainTitle{
   font-family: middayfont;
@@ -55,14 +63,18 @@ font-family: middayfont;
 width: 100%;
   text-align: center;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: bariolfont;
+    font-weight: bold;
 }
 
 h2 {
   width: 100%;
   text-align: center;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: bariolfont;
+    font-weight: bold;
+
+
 }
 
 .navbar-toggler { 
@@ -101,7 +113,6 @@ nav {
 .active {
 text-decoration: underline;
 color: white;
-
 }
 header .container {
 	height: 100%; 
@@ -333,12 +344,12 @@ ul.entryList li {
 
 #FormsubmitUpdateEntry1 input, #FormsubmitUpdateEntry2 input,#FormsubmitUpdateEntry3 input,#FormsubmitUpdateEntry1 label,#FormsubmitUpdateEntry2 label,#FormsubmitUpdateEntry3 label{
   width: 50%;
-  padding: 10px;
+  padding: 5px;
 }
 
 #FormsubmitUpdateEntry1 input[type = "submit"], #FormsubmitUpdateEntry2 input[type = "submit"],#FormsubmitUpdateEntry3 input[type = "submit"]{
   width: 38%;
-  margin-top: 10px;
+  margin-top: 15px;
   padding: 10px;
   margin-bottom: 10px;
 }
@@ -496,7 +507,7 @@ ul li img.imgnewlocation {
 
 #formCreate3 input,#formCreate3 label {
    width: 35%;
-  padding: 10px;
+  padding: 5px;
 }
 #formCreate3 input[type = "submit"]  {
   width: 30%;
@@ -507,7 +518,7 @@ ul li img.imgnewlocation {
 }
 #formCreate1 input, #formCreate2 input,#formCreate1 label,#formCreate2 label{
   width: 50%;
-  padding: 10px;
+  padding: 5px;
 }
 
 #formCreate1 input[type = "submit"],#formCreate2 input[type = "submit"]{
@@ -585,7 +596,7 @@ ul.filterOptions li {
 
 #formCreate3 input,#formCreate3 label {
    width: 80%;
-  padding: 10px;
+  padding: 5px;
 }
 #formCreate3 input[type = "submit"]  {
   width: 60%;
@@ -596,7 +607,6 @@ ul.filterOptions li {
 }
 #formCreate1 input, #formCreate2 input,#formCreate1 label,#formCreate2 label{
    width: 100%;
-  padding: 10px;
 }
 
 #formCreate1 input[type = "submit"],#formCreate2 input[type = "submit"]{
@@ -611,7 +621,7 @@ ul.filterOptions li {
 }
 #FormsubmitUpdateEntry1 input, #FormsubmitUpdateEntry2 input,#FormsubmitUpdateEntry3 input,#FormsubmitUpdateEntry1 label,#FormsubmitUpdateEntry2 label,#FormsubmitUpdateEntry3 label{
    width: 100%;
-  padding: 10px;
+  padding: 5px;
 }
 
 #FormsubmitUpdateEntry1 input[type = "submit"], #FormsubmitUpdateEntry2 input[type = "submit"],#FormsubmitUpdateEntry3 input[type = "submit"]{
@@ -686,7 +696,7 @@ ul.filterOptions li {
 
 #formCreate3 input,#formCreate3 label {
    width: 80%;
-  padding: 10px;
+  padding: 5px;
 }
 #formCreate3 input[type = "submit"]  {
   width: 60%;
@@ -697,7 +707,7 @@ ul.filterOptions li {
 }
 #formCreate1 input, #formCreate2 input,#formCreate1 label,#formCreate2 label{
    width: 100%;
-  padding: 10px;
+  padding: 5px;
 }
 
 #formCreate1 input[type = "submit"],#formCreate2 input[type = "submit"]{
@@ -713,7 +723,7 @@ ul.filterOptions li {
 }
 #FormsubmitUpdateEntry1 input, #FormsubmitUpdateEntry2 input,#FormsubmitUpdateEntry3 input,,#FormsubmitUpdateEntry1 label,#FormsubmitUpdateEntry2 label,#FormsubmitUpdateEntry3 label{
    width: 100%;
-  padding: 10px;
+  padding: 5px;
 }
 
 #FormsubmitUpdateEntry1 input[type = "submit"], #FormsubmitUpdateEntry2 input[type = "submit"],#FormsubmitUpdateEntry3 input[type = "submit"]{
