@@ -49,9 +49,14 @@ function removeElementsByClass(className){
 }
 
 
+searchEntries(this);
 
+function searchEntries(obj) {
 
-function searchEntries() {
+	 obj.disabled = true;
+    setTimeout(function() {
+        obj.disabled = false;
+    }, 850);
 	var storeresult = document.getElementById("mysearchBar").value.trim();
 var node = document.getElementById("mycontainer2_2");
 

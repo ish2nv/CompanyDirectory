@@ -2,8 +2,9 @@ body {
     height: 100%;
     width: 100%;
     position: absolute;
-    background-color: gainsboro;
-    font-family: radioGrotesk;
+    background-color: #f8f8ff;
+    font-family: Arial, Helvetica, sans-serif 
+;
 
 }
 
@@ -80,8 +81,17 @@ border-radius: 30px;
   font-weight:bold;
 
 }
-.modal-backdrop {
-   background-color: gray;
+.modal {
+  background: -webkit-gradient(linear, left bottom, left top, from(#fbc2eb), to(#a18cd1));
+  background: -webkit-linear-gradient(bottom, #fbc2eb 0%, #a18cd1 100%);
+  background: -moz-linear-gradient(bottom, #fbc2eb 0%, #a18cd1 100%);
+  background: -o-linear-gradient(bottom, #fbc2eb 0%, #a18cd1 100%);
+  background: linear-gradient(to top, #fbc2eb 0%, #a18cd1 100%);
+    background: -webkit-gradient(linear, left bottom, right top, from(#fc2c77), to(#6c4079));
+  background: -webkit-linear-gradient(bottom left, #fc2c77 0%, #6c4079 100%);
+  background: -moz-linear-gradient(bottom left, #fc2c77 0%, #6c4079 100%);
+  background: -o-linear-gradient(bottom left, #fc2c77 0%, #6c4079 100%);
+  background: linear-gradient(to top right, #fc2c77 0%, #6c4079 100%);
 }
 #exampleModalLabel2{
     color: white;
@@ -113,7 +123,7 @@ h2 {
 }
 
 .navbar-toggler { 
-background-color: gray;
+background-color: #3CB371;
 
  }
 
@@ -134,7 +144,7 @@ nav li:hover {
   background-color: black;
 }
 nav {
-  background-color:  gray;
+  background-color:  #3CB371;
 }
 #sidenav a {
   color: white;
@@ -186,7 +196,7 @@ background-color: black;
 
 }
 .dropdown-menu {
-  background-color:  gray;
+  background-color:  #3CB371;
 }
 .dropdown-menu .dropdown-item {
   cursor: pointer;
@@ -318,15 +328,23 @@ cursor: pointer;
 }
 #mycontainer2 .row:nth-child(1) {
 font-weight: bold;
+border-bottom: 0.7px solid gray;
 }
-
+#mycontainer2 .row:nth-child(even) {
+  background: #e0e0e0;
+}
+#mycontainer2 .row p{
+text-align: center;
+margin:0;
+padding: 0;
+margin:5px;
+}
 #mysearchBar {
   border-top-left-radius: 25px;
     border-bottom-left-radius: 25px;
     padding: 16px;
   width: 76%;
    border: 1px solid grey;
-  border-left: none; /* Prevent double borders */
 }
 #submitsearchbtn {
   border-top-right-radius: 25px;
@@ -388,14 +406,12 @@ input.form-control {
      padding: 14px;
      border-width: 3px;
      border-color: #d4d2d5;
-     background-color: #f7f3f3;
      border-style: solid;
      border-radius: 30px;
 }
 select.form-control {
      border-width: 3px;
      border-color: #d4d2d5;
-     background-color: #f7f3f3;
      border-style: solid;
      border-radius: 30px;
 }
@@ -412,10 +428,10 @@ margin-top: 145px;
  display: flex;
   justify-content: center;
   align-items: center;
-         background-color: white;
-  -webkit-border-radius: 9px;
-  -moz-border-radius: 9px;
-  border-radius: 9px;
+         background-color: #dfdfe5;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  border-radius: 12px;
   padding: 10px;
 }
 
@@ -508,58 +524,6 @@ ul.filterOptions li {
   margin-top: 25px;
 }
 
-
-#formCreate3 input,#formCreate3 label {
-   width: 80%;
-  padding: 5px;
-}
-#formCreate3 input[type = "submit"]  {
-  width: 60%;
-  margin-top: 10px;
-  padding: 10px;
-  margin-bottom: 10px;
-
-}
-#formCreate1 input, #formCreate2 input,#formCreate1 label,#formCreate2 label{
-   width: 100%;
-}
-
-#formCreate1 input[type = "submit"],#formCreate2 input[type = "submit"]{
-  width: 60%;
-  margin-top: 10px;
-  padding: 10px;
-  margin-bottom: 10px;
-}
-
-#formCreate1 select,#formCreate2 select {
-   width: 100%;
-}
-#FormsubmitUpdateEntry1 input, #FormsubmitUpdateEntry2 input,#FormsubmitUpdateEntry3 input,#FormsubmitUpdateEntry1 label,#FormsubmitUpdateEntry2 label,#FormsubmitUpdateEntry3 label{
-   width: 100%;
-  padding: 5px;
-}
-
-#FormsubmitUpdateEntry1 input[type = "submit"], #FormsubmitUpdateEntry2 input[type = "submit"],#FormsubmitUpdateEntry3 input[type = "submit"]{
-  width: 60%;
-  margin-top: 10px;
-  padding: 10px;
-  margin-bottom: 10px;
-}
-#FormsubmitUpdateEntry1 select, #FormsubmitUpdateEntry2 select {
-   width: 100%;
-
-}
-ul li img {
-   width: 100%;
-    border-radius: 13px;
-}
-
-ul li img.imgnewlocation {
-   width: 80%;
-    border-radius: 13px;
-
-}
-
 h2 {
 font-size: 25px;
 }
@@ -605,59 +569,6 @@ ul.filterOptions li {
   margin-top: 25px;
 }
 
-
-#formCreate3 input,#formCreate3 label {
-   width: 80%;
-  padding: 5px;
-}
-#formCreate3 input[type = "submit"]  {
-  width: 60%;
-  margin-top: 10px;
-  padding: 10px;
-  margin-bottom: 10px;
-
-}
-#formCreate1 input, #formCreate2 input,#formCreate1 label,#formCreate2 label{
-   width: 100%;
-  padding: 5px;
-}
-
-#formCreate1 input[type = "submit"],#formCreate2 input[type = "submit"]{
-  width: 60%;
-  margin-top: 10px;
-  padding: 10px;
-  margin-bottom: 10px;
-}
-
-#formCreate1 select,#formCreate2 select {
-   width: 100%;
-
-}
-#FormsubmitUpdateEntry1 input, #FormsubmitUpdateEntry2 input,#FormsubmitUpdateEntry3 input,,#FormsubmitUpdateEntry1 label,#FormsubmitUpdateEntry2 label,#FormsubmitUpdateEntry3 label{
-   width: 100%;
-  padding: 5px;
-}
-
-#FormsubmitUpdateEntry1 input[type = "submit"], #FormsubmitUpdateEntry2 input[type = "submit"],#FormsubmitUpdateEntry3 input[type = "submit"]{
-  width: 60%;
-  margin-top: 10px;
-  padding: 10px;
-  margin-bottom: 10px;
-}
-#FormsubmitUpdateEntry1 select, #FormsubmitUpdateEntry2 select {
-   width: 100%;
-
-}
-ul li img {
-   width: 100%;
-    border-radius: 13px;
-}
-
-ul li img.imgnewlocation {
-   width: 80%;
-    border-radius: 13px;
-
-}
 
 h2 {
 font-size: 25px;
