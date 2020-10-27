@@ -12,6 +12,7 @@
 
 <link rel="stylesheet" type="text/css" href="libs/css/style.css">
 <script src="https://kit.fontawesome.com/4273a378cb.js" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
 </head>
 <body>
@@ -42,11 +43,14 @@
 
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Details</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <div style="flex-direction:column;">
+        <h1 class="modal-title" id="exampleModalLabel">Details</h1>
+          <h3 class="modal-title" id="exampleModalLabel2">Company Directory</h3>
+        </div>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color: white;">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -64,51 +68,85 @@
 </div>
 
 
-<form id = "FormsubmitUpdateEntry1"  method="post" onsubmit = "submitUpdateEntry()">
+<div id = "FormsubmitUpdateEntry1">
+<form  method="post" onsubmit = "submitUpdateEntry()">
 <div class="container-fluid" id = "mycontainer8">
     <ul class = "updateList" id = "updateListID">
-    <li><h2 class="listHeader">Update personnel</h2></li>
-    <li><label for="fnameinput">First name:</label>
-    <input class="form-control" id = "fnameinput" type="text" placeholder="First name" required="required" ></li>
-    <li><label for="lnameinput">Last name:</label>
-    <input class="form-control" id = "lnameinput" type="text" placeholder="Last name" required="required"></li>
-    <li><label for="jobtitleinput">Job title:</label>    
-    <input class="form-control" id = "jobtitleinput" type="text" placeholder="Job title" required="required"></li>
-    <li><label for="emailinput">Email address:</label>        
-    <input class="form-control" id = "emailinput" type="email" placeholder="Email" required="required"></li>
-    <li><label for="departmentDropDown">Department:</label>        
+    <li><h2 class="display-4" style="text-align: left;">Update personnel</h2></li>
+    <div class="row">
+     <div class="form-group col-lg-6 col-6">
+    <li><label class="lead" for="fnameinput">First name:</label>
+    <input class="form-control" id = "fnameinput" type="text"  required="required" ></li>
+            </div>
+                 <div class="form-group col-lg-6 col-6">
+    <li><label class="lead" for="lnameinput">Last name:</label>
+    <input class="form-control" id = "lnameinput" type="text"  required="required"></li>
+</div>
+</div>
+<div class="row">
+     <div class="form-group col-lg-6 col-6">
+    <li><label class="lead" for="jobtitleinput">Job title:</label>    
+    <input class="form-control" id = "jobtitleinput" type="text"  required="required"></li>
+  </div>
+       <div class="form-group col-lg-6 col-6">
+    <li><label class="lead" for="emailinput">Email address:</label>        
+    <input class="form-control" id = "emailinput" type="email"  required="required"></li>
+</div>
+</div>
+  <div class="row">
+      <div class="form-group col-lg-12 col-12">
+    <li><label class="lead" for="departmentDropDown">Department:</label>        
     <select class="form-control" id = "departmentDropDown" required></select></li>
+  </div></div>
+    <div class="row">
+  <div class="form-group col-lg-4 col-12">
   <li><input class="btn btn-primary" id = "submitbtn" type="submit" value="Submit change"></li>
+</div></div>
 </ul>
 </div>
 </form>
+</div>
 
-<form id = "FormsubmitUpdateEntry2"  method="post" onsubmit = "submitUpdateEntry2()">
+<div id = "FormsubmitUpdateEntry2">
+<form method="post" onsubmit = "submitUpdateEntry2()">
   <div class="container-fluid" id = "mycontainer8">
     <ul class = "updateList" id = "updateListID3">
-          <li><h2 class="listHeader">Update department</h2></li>
-      <li><label for="departmentinput">Department:</label>
-    <input class="form-control" id = "departmentinput" type="text" placeholder="Department" required="required" ></li>
-          <li><label for="locationdropdown">Location:</label>
+          <li><h2 class="display-4" style="text-align: left;">Update department</h2></li>
+              <div class="row">
+     <div class="form-group col-lg-12 col-12">
+      <li><label class="lead" for="departmentinput">Department:</label>
+    <input class="form-control" id = "departmentinput" type="text"  required="required" ></li>
+  </div>
+       <div class="form-group col-lg-12 col-12">
+          <li><label class="lead" for="locationdropdown">Location:</label>
  <select class="form-control" id = "locationdropdown" required> </select></li>
+</div>
+     <div class="form-group col-lg-4 col-12">
   <li><input class="btn btn-primary" id = "submitbtn2" type="submit" value="Submit change"></li>
+</div>
+</div>
     </ul>
   </div>
 </form>
-
-<form id = "FormsubmitUpdateEntry3"  method="post" onsubmit = "submitUpdateEntry3()">
+</div>
+<div id = "FormsubmitUpdateEntry3">
+<form  method="post" onsubmit = "submitUpdateEntry3()">
     <div class="container-fluid" id = "mycontainer8">
     <ul class = "updateList" id = "updateListID4">
-                <li><h2 class="listHeader">Update location</h2></li>
-                          <li><label for="locationinput">Location:</label>
-    <input class="form-control" id = "locationinput" type="text" placeholder="Location" required="required" ></li>
+                <li><h2 class="display-4" style="text-align: left;">Update location</h2></li>
+                           <div class="row">
+     <div class="form-group col-lg-12 col-12">   
+                          <li><label class="lead" for="locationinput">Location:</label>
+    <input class="form-control" id = "locationinput" type="text"  required="required" ></li>
+  </div>
+     <div class="form-group col-lg-4 col-12">
       <li><input class="btn btn-primary" id = "submitbtn3" type="submit" value="Submit change"></li>
+    </div>
+  </div>
   </ul>
 </div>
 </form>
-
-
-
+</div>
 
 
 <div class="container-fluid" id = "mycontainer1">
@@ -120,88 +158,108 @@
 </ul>
 <ul class = "filterOptions">
   <li><input id = "personnelRadio" type="radio" name="item_type" value="name" checked  onclick="onClickpersonnelRadio()">
-  <label for="personnelRadio">Personnel</label></li>
+  <label class="lead" for="personnelRadio">Personnel</label></li>
   <li><input id = "departmentRadio" type="radio" name="item_type" value="department" onclick="onClickdepartmentRadio()">
-  <label for="departmentRadio">Department</label></li>
+  <label class="lead" for="departmentRadio">Department</label></li>
   <li><input id = "locationRadio" type="radio" name="item_type" value="location" onclick="onClicklocationRadio()">
-  <label for="locationRadio">Location</label></li>
+  <label class="lead" for="locationRadio">Location</label></li>
 </ul>
 
 </div>
 
 
 <div class="container-fluid" id = "mycontainer2">
-
-<ul class = "entryList" id = "entryListID">
-	</ul>
-
+<div class="container" id = "mycontainer2_2">
+</div>
 </div>
 
-<form method="post" onsubmit = "submitCreatePersonnelEntry()" id = "formCreate1">
+<div id = "formCreate1">
+<form class="form-group" method="post" onsubmit = "submitCreatePersonnelEntry()">
 
 <div class="container-fluid" id = "mycontainer3">
 <ul class = "createPersonnel" id = "createPersonnelID">
-<li><h2>Personnel</h2></li>
-<li><img src = "imgs/staff.jpg"></li>
-  <li><label for="fnameinput_create">First name:</label>
-<input class="form-control" id = "fnameinput_create" type="text" placeholder="First name" required="required" ></li>
-  <li><label for="lnameinput_create">Last name:</label>
-	 <input class="form-control" id = "lnameinput_create" type="text" placeholder="Last name" required="required"></li>
-   <li><label for="jobtitleinput_create">Job title:</label>  
-	<input class="form-control" id = "jobtitleinput_create" type="text" placeholder="Job title" required="required"></li>
-     <li><label for="emailinput_create">Email address:</label>  
-<input class="form-control" id = "emailinput_create" type="email" placeholder="Email" required="required"></li>
+<li><h2 class="display-4" style="text-align: left;">Personnel</h2></li>
+<div class="row">
+     <div class="form-group col-lg-6 col-6">
+  <li><label class="lead" for="fnameinput_create">First name:</label>
+<input class="form-control" id = "fnameinput_create" type="text" required="required" ></li>
+</div>
+  <div class="form-group col-lg-6 col-6">
+  <li><label class="lead" for="lnameinput_create">Last name:</label>
+	 <input class="form-control" id = "lnameinput_create" type="text" required="required"></li>
+  </div>
+</div>
 
+  <div class="row">
+      <div class="form-group col-lg-6 col-6">
+   <li><label class="lead" for="jobtitleinput_create">Job title:</label>  
+	<input class="form-control" id = "jobtitleinput_create" type="text" required="required"></li>
+</div>
+      <div class="form-group col-lg-6 col-6">
+     <li><label class="lead" for="emailinput_create">Email address:</label>  
+<input class="form-control" id = "emailinput_create" type="email" required="required"></li>
+</div>
+</div>
+  <div class="row">
+      <div class="form-group col-lg-12 col-12">
+ <li><label class="lead" for="departmentDropDown_create">Department:</label>  
+    <select class="form-control" id = "departmentDropDown_create" required="required"></select></li>
+           </div>
+         </div>
+      <div class="row">
+              <div class="form-group col-lg-4 col-12">
+             <li><input class="btn btn-primary" id = "submit_create" type="submit" value="Submit"></li>
+           </div>
+          </div>
 	</ul>
 	</div>
-<div class="container-fluid" id = "mycontainer4">
-<ul class = "createDepartment" id = "createDepartmentID">
-<li><h2>Department</h2></li>
-<li><img src = "imgs/department.jpg"></li>
-     <li><label for="departmentDropDown_create">Department:</label>  
-	  <select class="form-control" id = "departmentDropDown_create" required="required"></select></li>
-             <li><input class="btn btn-primary" id = "submit_create" type="submit" value="Submit"></li>
-	</ul>
-</div>
 </form>
+</div>
 
-
-
-<form method="post" onsubmit = "submitCreateDepartmentEntry()" id = "formCreate2">
+<div id = "formCreate2">
+<form method="post" onsubmit = "submitCreateDepartmentEntry()">
 <div class="container-fluid" id = "mycontainer5">
-
 <ul class = "newdepartment" id = "newdepartmentID">
-<li><h2>Department</h2></li>
-<li><img src = "imgs/department.jpg"></li>
-<li><label for="newdepartment_input">Department:</label>  
-<input class="form-control" id = "newdepartment_input" type="text" placeholder="New department" required="required" ></li>
+<li><h2 class="display-4" style="text-align: left;">Department</h2></li>
+<div class="row">
+     <div class="form-group col-lg-12 col-12">
+<li><label class="lead" for="newdepartment_input">Department:</label>  
+<input class="form-control" id = "newdepartment_input" type="text" required="required" ></li>
+</div>
+     <div class="form-group col-lg-12 col-12">
+<li><label class="lead" for="selectLocation_select">Location:</label>  
+<select class="form-control" id = "selectLocation_select" required="required"></select></li>
+</div>
+     <div class="form-group col-lg-4 col-12">
+<li><input class="btn btn-primary" id = "submit_create2" type="submit" value="Submit"></li>
+</div>
+</div>
 </ul>
 </div>
-
-<div class="container-fluid" id = "mycontainer6">
-
-<ul class = "selectLocation" id = "selectLocationID">
-<li><h2>Location</h2></li>
-<li><img src = "imgs/Location.jpg"></li>
-<li><label for="selectLocation_select">Location:</label>  
-	<select class="form-control" id = "selectLocation_select" required="required"></select></li>
-             <li><input class="btn btn-primary" id = "submit_create2" type="submit" value="Submit"></li>
-	</ul>
-</div>
 </form>
-<form method="post" onsubmit = "submitCreateLocationEntry()" id = "formCreate3">
+</div>
+
+<div id = "formCreate3">
+<form method="post" onsubmit = "submitCreateLocationEntry()">
 
 <div class="container-fluid" id = "mycontainer7">
 <ul class = "newLocation" id = "newLocationID">
-<li><h2>Location</h2></li>
-<li><img class = "imgnewlocation" src = "imgs/location.jpg"></li>
-<li><label for="newLocation_input">Location:</label>  
-<input class="form-control" id = "newLocation_input" type="text" placeholder="New location" required="required" ></li>
+<li><h2 class="display-4" style="text-align: left;">Location</h2></li>
+  <div class="row">
+      <div class="form-group col-lg-12 col-12">
+<li><label class="lead" for="newLocation_input">Location:</label>  
+<input class="form-control" id = "newLocation_input" type="text" required="required" ></li>
+</div>
+</div>
+  <div class="row">
+      <div class="form-group col-lg-4 col-12">
  <li><input class="btn btn-primary" id = "submit_create3" type="submit" value="Submit"></li>
+</div>
+</div>
 </ul>
 	</div>
 </form>
-
+</div>
 <footer>
     <p>© Shah Ali 2020. All Rights Reserved.</p>
 

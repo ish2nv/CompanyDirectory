@@ -55,6 +55,7 @@
 	}
    
    	$data = [];
+   	$data2 = [];
 
 
 
@@ -63,13 +64,32 @@
 		array_push($data, $row);
 
 	}
+	for($i = 0; $i< count($data);$i++) {
+		$getlocID = $data[$i]['id'];
+		$query = "SELECT COUNT(department.id) FROM department where locationID = '$getlocID'";
+	$result = $conn->query($query);
 
+			if (!$result) {
+		$output['status']['code'] = "400";
+		$output['status']['name'] = "executed";
+		$output['status']['description'] = "query failed";	
+		$output['data'] = [];
+		mysqli_close($conn);
+		echo json_encode($output); 
+		exit;
+		break;
+	}
+		while ($row = mysqli_fetch_assoc($result)) {
+			array_push($data2, $row);
+	}
+	}
 
 	$output['status']['code'] = "200";
 	$output['status']['name'] = "ok";
 	$output['status']['description'] = "success";
 	$output['status']['returnedIn'] = (microtime(true) - $executionStartTime) / 1000 . " ms";
 	$output['data'] = $data;
+	$output['data2'] = $data2;
 
 
 

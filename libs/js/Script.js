@@ -9,6 +9,11 @@
 	var radiobtnoptionglobal = "";
 	var locationid2global = "";
 
+
+
+
+
+
 $(document).ready(function() {
     $(document).on('submit', '#FormsubmitUpdateEntry1', function() {
       // do your things
@@ -42,18 +47,18 @@ function removeElementsByClass(className){
         elements[0].parentNode.removeChild(elements[0]);
     }
 }
+
+
+
+
 function searchEntries() {
 	var storeresult = document.getElementById("mysearchBar").value.trim();
-var node = document.getElementById("entryListID");
-var subheader = document.createElement("h2");
-var m_li = document.createElement("li");
-var container_1tmp = document.getElementById("mycontainer1");
+var node = document.getElementById("mycontainer2_2");
 
 
     while (node.firstChild) {
           node.removeChild(node.lastChild);
           }
-
 
 if (document.getElementById('personnelRadio').checked) {
 radiobtnoptionglobal = document.getElementById('personnelRadio').value; 
@@ -67,22 +72,85 @@ radiobtnoptionglobal = document.getElementById('personnelRadio').value;
 	success: function(result, textStatus, xhr){
 		if (xhr.status === 200) {
 			if(result['status']['code'] == 200) {
-			var entrylist = document.getElementById("entryListID");
-				subheader.innerHTML = "Employee List";
-				subheader.setAttribute("class","subHeader1");
-				m_li.appendChild(subheader);
-				entrylist.appendChild(m_li);
+			var innercontainer2 = document.getElementById("mycontainer2_2");
+
+					var namepara1 = document.createElement("p");
+					var emailpara2 = document.createElement("p");
+					var locationpara3 = document.createElement("p");
+					var departmentpara4 = document.createElement("p");
+					var newRow = document.createElement("div");
+					var newNameRow = document.createElement("div");
+					var newEmailRow = document.createElement("div");
+					var newLocationRow = document.createElement("div");
+					var newDepartmentRow = document.createElement("div");
+					newRow.setAttribute("class","row");
+					newNameRow.setAttribute("class","col-md-3 col-4 padding-0");
+					newEmailRow.setAttribute("class","col-md-3 emailCol");
+					newLocationRow.setAttribute("class","col-md-3 col-4 padding-0");
+					newDepartmentRow.setAttribute("class","col-md-3 col-4 padding-0");
+
+					namepara1.innerHTML = "Name";
+					emailpara2.innerHTML = "Email";
+					locationpara3.innerHTML = "Location";
+					departmentpara4.innerHTML = "Department";
+					newNameRow.appendChild(namepara1);
+					newEmailRow.appendChild(emailpara2);
+					newLocationRow.appendChild(locationpara3);
+					newDepartmentRow.appendChild(departmentpara4);
+					newRow.appendChild(newNameRow);
+					newRow.appendChild(newEmailRow);
+					newRow.appendChild(newLocationRow);
+					newRow.appendChild(newDepartmentRow);
+					innercontainer2.appendChild(newRow);
+	
+
 				for(var i = 0; i < result['data'].length;i++) {
-					var option = document.createElement("li");
-					var btn = document.createElement("button");
-					btn.setAttribute("id","entryListOption");
-					btn.setAttribute("onclick",'showPopup( this,"'+result['data'][i]['id']+'", "'+result['data'][i]['firstName']+'","'+result['data'][i]['lastName']+'","'+result['data'][i]['jobTitle']+'","'+result['data'][i]['email']+'","'+result['data2'][i]['name']+'","'+result['data3'][i]['name']+'","'+result['data'][i]['departmentID']+'")');
-					btn.setAttribute("data-toggle","modal");
-					btn.setAttribute("data-target","#exampleModal");
-					btn.innerText = result['data'][i]['firstName'] + " " + result['data'][i]['lastName'] ;
-					option.appendChild(btn);
-					entrylist.appendChild(option);
+
+					var namepara1 = document.createElement("p");
+					var emailpara2 = document.createElement("p");
+					var locationpara3 = document.createElement("p");
+					var departmentpara4 = document.createElement("p");
+					var newRow = document.createElement("div");
+					var newNameRow = document.createElement("div");
+					var newEmailRow = document.createElement("div");
+					var newLocationRow = document.createElement("div");
+					var newDepartmentRow = document.createElement("div");
+
+					newRow.setAttribute("class","row");
+				    newRow.setAttribute("onclick",'showPopup( this,"'+result['data'][i]['id']+'", "'+result['data'][i]['firstName']+'","'+result['data'][i]['lastName']+'","'+result['data'][i]['jobTitle']+'","'+result['data'][i]['email']+'","'+result['data2'][i]['name']+'","'+result['data3'][i]['name']+'","'+result['data'][i]['departmentID']+'")');
+					newRow.setAttribute("data-toggle","modal");
+					newRow.setAttribute("data-target","#exampleModal");				
+					newNameRow.setAttribute("class","col-md-3 col-4 padding-0");
+					newEmailRow.setAttribute("class","col-md-3 emailCol");
+					newLocationRow.setAttribute("class","col-md-3 col-4 padding-0");
+					newDepartmentRow.setAttribute("class","col-md-3 col-4 padding-0");	
+
+
+					emailpara2.style.textOverflow = "ellipsis";
+					emailpara2.style.overflow = "hidden";
+					namepara1.style.textOverflow = "ellipsis";
+					namepara1.style.overflow = "hidden";
+					locationpara3.style.textOverflow = "ellipsis";
+					locationpara3.style.overflow = "hidden";	
+					departmentpara4.style.textOverflow = "ellipsis";
+					departmentpara4.style.overflow = "hidden";						
+
+
+					namepara1.innerHTML = result['data'][i]['firstName'] + " " + result['data'][i]['lastName'];
+					emailpara2.innerHTML = result['data'][i]['email'];
+					locationpara3.innerHTML = result['data3'][i]['name'];
+					departmentpara4.innerHTML = result['data2'][i]['name'];
+					newNameRow.appendChild(namepara1);
+					newEmailRow.appendChild(emailpara2);
+					newLocationRow.appendChild(locationpara3);
+					newDepartmentRow.appendChild(departmentpara4);
+					newRow.appendChild(newNameRow);
+					newRow.appendChild(newEmailRow);
+					newRow.appendChild(newLocationRow);
+					newRow.appendChild(newDepartmentRow);
+					innercontainer2.appendChild(newRow);
 				}
+
                     var container_1 = document.getElementById("mycontainer1");
 					var para = document.createElement("p");
 					para.setAttribute("class","entryResultNumber");
@@ -100,10 +168,20 @@ radiobtnoptionglobal = document.getElementById('personnelRadio').value;
 					if(result['data'].length == 0 ){
                     let container_2 = document.getElementById("mycontainer2");
                     container_2.style.display="none";
+
 					}
 					else {
 						let container_2 = document.getElementById("mycontainer2");
                         container_2.style.display = "flex";
+                        var headerOffset = 85;
+                        var elementPosition = container_2.getBoundingClientRect().top;
+                        var offsetPosition = elementPosition - headerOffset;
+
+                        window.scrollTo({
+                      top: offsetPosition,
+                      behavior: "smooth"
+                 });
+
 					}
 				
 			}
@@ -126,21 +204,67 @@ radiobtnoptionglobal = document.getElementById('departmentRadio').value;
 	success: function(result, textStatus, xhr){
 		if (xhr.status === 200) {
 			if(result['status']['code'] == 200) {
-				var entrylist = document.getElementById("entryListID");
-				subheader.innerHTML = "Department List";
-				subheader.setAttribute("class","subHeader1");
-				m_li.appendChild(subheader);
-				entrylist.appendChild(m_li);
+				var innercontainer2 = document.getElementById("mycontainer2_2");
+
+					var depIDpara = document.createElement("p");
+					var locationIDpara3 = document.createElement("p");
+					var departmentpara4 = document.createElement("p");
+					var newRow = document.createElement("div");
+					var DepartmentIDRow = document.createElement("div");
+					var locationIDRow = document.createElement("div");
+					var newDepartmentRow = document.createElement("div");
+
+					newRow.setAttribute("class","row");
+					DepartmentIDRow.setAttribute("class","col-sm-4 col-4");	
+					locationIDRow.setAttribute("class","col-sm-4 col-4");
+					newDepartmentRow.setAttribute("class","col-sm-4 col-4");
+
+					depIDpara.innerHTML = "ID";
+					departmentpara4.innerHTML = "Department";
+					locationIDpara3.innerHTML = "Location";
+
+					DepartmentIDRow.appendChild(depIDpara);
+					newDepartmentRow.appendChild(departmentpara4);
+					locationIDRow.appendChild(locationIDpara3);
+
+					newRow.appendChild(DepartmentIDRow);
+					newRow.appendChild(newDepartmentRow);
+					newRow.appendChild(locationIDRow);
+
+					innercontainer2.appendChild(newRow);
+			
 				for(var i = 0; i < result['data'].length;i++) {
-					var option = document.createElement("li");
-					var btn = document.createElement("button");
-					btn.setAttribute("id","entryListOption");
-					btn.setAttribute("onclick",'showPopup2( this,"'+result['data'][i]['id']+'", "'+result['data'][i]['name']+'","'+result['data'][i]['locationID']+'")');
-					btn.setAttribute("data-toggle","modal");
-					btn.setAttribute("data-target","#exampleModal");
-					btn.innerText = result['data'][i]['name'];
-					option.appendChild(btn);
-					entrylist.appendChild(option);
+
+					var depIDpara = document.createElement("p");
+					var locationIDpara3 = document.createElement("p");
+					var departmentpara4 = document.createElement("p");
+					var newRow = document.createElement("div");
+					var DepartmentIDRow = document.createElement("div");
+					var locationIDRow = document.createElement("div");
+					var newDepartmentRow = document.createElement("div");
+
+					newRow.setAttribute("class","row");
+				    newRow.setAttribute("onclick",'showPopup2( this,"'+result['data'][i]['id']+'", "'+result['data'][i]['name']+'","'+result['data'][i]['locationID']+'","'+result['data2'][i]['name']+'","'+result['data3'][i]['COUNT(personnel.id)']+'")');
+					newRow.setAttribute("data-toggle","modal");
+					newRow.setAttribute("data-target","#exampleModal");	
+					DepartmentIDRow.setAttribute("class","col-sm-4 col-4");	
+					locationIDRow.setAttribute("class","col-sm-4 col-4");
+					newDepartmentRow.setAttribute("class","col-sm-4 col-4");
+
+					depIDpara.innerHTML = result['data'][i]['id'];
+					departmentpara4.innerHTML = result['data'][i]['name'];
+					locationIDpara3.innerHTML = result['data2'][i]['name'];
+
+					DepartmentIDRow.appendChild(depIDpara);
+					newDepartmentRow.appendChild(departmentpara4);
+					locationIDRow.appendChild(locationIDpara3);
+
+					newRow.appendChild(DepartmentIDRow);
+					newRow.appendChild(newDepartmentRow);
+					newRow.appendChild(locationIDRow);
+
+					innercontainer2.appendChild(newRow);
+
 				}
 				    var container_1 = document.getElementById("mycontainer1");
 					var para = document.createElement("p");
@@ -162,6 +286,14 @@ radiobtnoptionglobal = document.getElementById('departmentRadio').value;
 					else {
 						let container_2 = document.getElementById("mycontainer2");
                         container_2.style.display = "flex";
+                        var headerOffset = 85;            
+                        var elementPosition = container_2.getBoundingClientRect().top;
+                        var offsetPosition = elementPosition - headerOffset;
+
+                        window.scrollTo({
+                      top: offsetPosition,
+                      behavior: "smooth"
+                 });                        
 					}
 			}
 		}
@@ -184,22 +316,70 @@ radiobtnoptionglobal = document.getElementById('locationRadio').value;
 	success: function(result, textStatus, xhr){
 		if (xhr.status === 200) {
 			if(result['status']['code'] == 200) {
-				var entrylist = document.getElementById("entryListID");
-			subheader.innerHTML = "Location List";
-				subheader.setAttribute("class","subHeader1");
-				m_li.appendChild(subheader);
-								entrylist.appendChild(m_li);
+				var innercontainer2 = document.getElementById("mycontainer2_2");
+
+					var locationIDpara3 = document.createElement("p");
+					var locationpara4 = document.createElement("p");
+					var locationDepNumberpara5 = document.createElement("p");
+					var newRow = document.createElement("div");
+					var locationIDRow = document.createElement("div");
+					var newlocationRow = document.createElement("div");
+					var locationDepNumberRow = document.createElement("div");
+
+					newRow.setAttribute("class","row");
+					locationIDRow.setAttribute("class","col-sm-4 col-4");
+					newlocationRow.setAttribute("class","col-sm-4 col-4");
+					locationDepNumberRow.setAttribute("class","col-sm-4 col-4");
+
+					locationIDpara3.innerHTML = "ID";
+					locationpara4.innerHTML = "Location";
+					locationDepNumberpara5.innerHTML = "No. departments";
+
+
+					locationIDRow.appendChild(locationIDpara3);
+					newlocationRow.appendChild(locationpara4);
+					locationDepNumberRow.appendChild(locationDepNumberpara5);
+
+					newRow.appendChild(locationIDRow);
+					newRow.appendChild(newlocationRow);
+					newRow.appendChild(locationDepNumberRow);
+
+					innercontainer2.appendChild(newRow);				
 
 				for(var i = 0; i < result['data'].length;i++) {
-					var option = document.createElement("li");
-					var btn = document.createElement("button");
-					btn.setAttribute("id","entryListOption");
-					btn.setAttribute("onclick",'showPopup3(this,"'+result['data'][i]['id']+'", "'+result['data'][i]['name']+'")');
-					btn.setAttribute("data-toggle","modal");
-					btn.setAttribute("data-target","#exampleModal");
-					btn.innerText = result['data'][i]['name'];
-					option.appendChild(btn);
-					entrylist.appendChild(option);
+
+					var locationIDpara3 = document.createElement("p");
+					var locationpara4 = document.createElement("p");
+				    var locationDepNumberpara5 = document.createElement("p");
+					var newRow = document.createElement("div");
+					var locationIDRow = document.createElement("div");
+					var newlocationRow = document.createElement("div");
+					var locationDepNumberRow = document.createElement("div");
+
+					newRow.setAttribute("class","row");
+				    newRow.setAttribute("onclick",'showPopup3(this,"'+result['data'][i]['id']+'", "'+result['data'][i]['name']+'","'+result['data2'][i]['COUNT(department.id)']+'")');
+					newRow.setAttribute("data-toggle","modal");
+					newRow.setAttribute("data-target","#exampleModal");	
+					locationIDRow.setAttribute("class","col-sm-4 col-4");
+					newlocationRow.setAttribute("class","col-sm-4 col-4");
+					locationDepNumberRow.setAttribute("class","col-sm-4 col-4");
+
+					locationIDpara3.innerHTML = result['data'][i]['id'];
+					locationpara4.innerHTML = result['data'][i]['name'];
+					locationDepNumberpara5.innerHTML = result['data2'][i]['COUNT(department.id)'];
+
+
+					locationIDRow.appendChild(locationIDpara3);
+					newlocationRow.appendChild(locationpara4);
+					locationDepNumberRow.appendChild(locationDepNumberpara5);
+
+					newRow.appendChild(locationIDRow);
+					newRow.appendChild(newlocationRow);
+					newRow.appendChild(locationDepNumberRow);
+
+					innercontainer2.appendChild(newRow);
+
+
 				}
 				    var container_1 = document.getElementById("mycontainer1");
 					var para = document.createElement("p");
@@ -222,6 +402,14 @@ radiobtnoptionglobal = document.getElementById('locationRadio').value;
 					else {
 						let container_2 = document.getElementById("mycontainer2");
                         container_2.style.display = "flex";
+                        var headerOffset = 85;
+                        var elementPosition = container_2.getBoundingClientRect().top;
+                        var offsetPosition = elementPosition - headerOffset;
+
+                        window.scrollTo({
+                      top: offsetPosition,
+                      behavior: "smooth"
+                 });                        
 					}
 			}
 		}
@@ -232,8 +420,6 @@ radiobtnoptionglobal = document.getElementById('locationRadio').value;
 });
 }
 
-
-
 }
 
 function showPopup(object,personnelID,fname,lname,jobtitle,email,departmentName,locationName,departmentID) {
@@ -242,26 +428,34 @@ function showPopup(object,personnelID,fname,lname,jobtitle,email,departmentName,
     while (modalbody.firstChild) {
           modalbody.removeChild(modalbody.lastChild);
           }
-	var para = document.createElement("p");
-	var para2 = document.createElement("p");
-	var para3 = document.createElement("p");
-	var para4 = document.createElement("p");
-	var para5 = document.createElement("p");
-	var para6 = document.createElement("p");
+	var i_para4 = document.createElement("i");
+	var i_para5 = document.createElement("i");
+	var i_para6 = document.createElement("i");
+	var para7 = document.createElement("p");
+	var para8 = document.createElement("p");
+	var para9 = document.createElement("p");
+	i_para4.setAttribute("class","fas fa-envelope");
+	i_para5.setAttribute("class","fas fa-building");
+	i_para6.setAttribute("class","fas fa-map-marker-alt");
+	i_para4.style.display="block";
+	i_para5.style.display="block";
+	i_para6.style.display="block";
+	para7.style.display="inline-block";
+	para8.style.display="inline-block";
+	para9.style.display="inline-block";
+	para7.innerHTML = email;
+	para8.innerHTML = departmentName;
+	para9.innerHTML =locationName;
 
-	para.innerHTML = "First name: " + fname;
-	para2.innerHTML = "Last name: " + lname;
-	para3.innerHTML = "Job title: " + jobtitle;
-	para4.innerHTML = "Email: " + email;
-	para5.innerHTML = "Department: " + departmentName;
-	para6.innerHTML = "Location: " + locationName;
+	i_para4.appendChild(para7);
+	i_para5.appendChild(para8);
+	i_para6.appendChild(para9);
+	document.getElementById("exampleModalLabel").innerHTML = fname + " " + lname;
+	document.getElementById("exampleModalLabel2").innerHTML = jobtitle;
 
-	modalbody.appendChild(para);
-	modalbody.appendChild(para2);
-	modalbody.appendChild(para3);
-	modalbody.appendChild(para4);
-	modalbody.appendChild(para5);
-	modalbody.appendChild(para6);
+	modalbody.appendChild(i_para4);
+	modalbody.appendChild(i_para5);
+	modalbody.appendChild(i_para6);
 
 	 fnameglobal =fname;
 	 lnameglobal = lname;
@@ -274,30 +468,50 @@ function showPopup(object,personnelID,fname,lname,jobtitle,email,departmentName,
 
 }
 
-function showPopup2(object,id,departmentname,locationid) {
+function showPopup2(object,id,departmentname,locationid,locationname,employeeNumber) {
 
 	var modalbody = document.getElementById("modalBody");
     while (modalbody.firstChild) {
           modalbody.removeChild(modalbody.lastChild);
           }
 	var para = document.createElement("p");
-	var para2 = document.createElement("p");
 	var para3 = document.createElement("p");
+	var para4 = document.createElement("p");
+	var ipara = document.createElement("i");
+	var ipara3 = document.createElement("i");
+	var ipara4 = document.createElement("i");
 
-	para.innerHTML = "ID: " + id;
-	para2.innerHTML = "Department: " + departmentname;
-	para3.innerHTML = "Location ID: " + locationid;
+		ipara.setAttribute("class","fas fa-id-badge");
+	ipara3.setAttribute("class","fas fa-map-marker-alt");
+	ipara4.setAttribute("class","fas fa-users");
+	ipara.style.display="block";
+	ipara3.style.display="block";
+	ipara.style.display="block";
+	para.style.display="inline-block";
+	para3.style.display="inline-block";
+	para4.style.display="inline-block";
 
-	modalbody.appendChild(para);
-	modalbody.appendChild(para2);
-	modalbody.appendChild(para3);
+	para.innerHTML = id;
+	para3.innerHTML = locationname;
+	para4.innerHTML = employeeNumber + " personnels assigned";
+
+	ipara.appendChild(para);
+	ipara3.appendChild(para3);
+	ipara4.appendChild(para4);
+
+		document.getElementById("exampleModalLabel").innerHTML = departmentname;
+	document.getElementById("exampleModalLabel2").innerHTML = "";
+
+	modalbody.appendChild(ipara);
+	modalbody.appendChild(ipara3);
+	modalbody.appendChild(ipara4);
 
 	 personnelIDglobal = id;
 	departmentNameglobal =departmentname;
 	 locationid2global = locationid;
 }
 
-function showPopup3(object,id,locationName) {
+function showPopup3(object,id,locationName,departmentNumber) {
 
 	var modalbody = document.getElementById("modalBody");
     while (modalbody.firstChild) {
@@ -305,12 +519,25 @@ function showPopup3(object,id,locationName) {
           }
 	var para = document.createElement("p");
 	var para2 = document.createElement("p");
+	var ipara = document.createElement("i");
+	var ipara3 = document.createElement("i");
+			ipara.setAttribute("class","fas fa-id-badge");
+	ipara3.setAttribute("class","fas fa-building");
+		ipara.style.display="block";
+	ipara3.style.display="block";
+		para.style.display="inline-block";
+	para2.style.display="inline-block";
 
 	para.innerHTML = "ID: " + id;
-	para2.innerHTML = "Location: " + locationName;
+	para2.innerHTML = departmentNumber + " departments assigned";
 
-	modalbody.appendChild(para);
-	modalbody.appendChild(para2);
+	ipara.appendChild(para);
+	ipara3.appendChild(para2);
+
+		document.getElementById("exampleModalLabel").innerHTML = locationName;
+	document.getElementById("exampleModalLabel2").innerHTML = "";
+	modalbody.appendChild(ipara);
+	modalbody.appendChild(ipara3);
 
 	 personnelIDglobal = id;
 	locationNameglobal =locationName;
@@ -341,7 +568,6 @@ $('.modal').modal('hide');
 	lnameinput.value = lnameglobal;
 	jobtitleinput.value = jobtitleglobal;
 	emailinput.value = emailglobal;
-	departmentDropDown.value = departmentIDglobal;
 
 	    $.ajax({
 	url: "libs/php/allDepartments.php",
@@ -360,6 +586,7 @@ $('.modal').modal('hide');
 				option.innerText = result['data'][i]['name'];
 				node.appendChild(option);
 			}			
+	node.value = departmentIDglobal;
 
 			}
 		}
@@ -1012,7 +1239,7 @@ function openCreateSearchForm(){
 
 function onClickpersonnelRadio() {
 var searchbar = document.getElementById("mysearchBar");
-searchbar.placeholder = "Search name, location, department..";
+searchbar.placeholder = "Search personnel, location, department..";
 
 }
 
