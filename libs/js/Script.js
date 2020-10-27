@@ -1260,3 +1260,4 @@ function onClicklocationRadio() {
 var searchbar = document.getElementById("mysearchBar");
 searchbar.placeholder = "Search location";
 }
+
